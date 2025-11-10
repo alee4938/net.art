@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>net.art</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="split-container">
+
+    <!-- Left half: full height iframe -->
+    <div class="half left">
+      <iframe src="https://www.newrafael.com/walk"></iframe>
+      <!-- Overlay link to make iframe clickable -->
+      <a href="../1/index.html" class="iframe-overlay"></a>
+    </div>
+
+    <!-- Right half: split into top-right gradient and bottom-right image -->
+    <div class="half right">
+      <a href="../1/index.html" class="iframe-overlay"></a>
+        <!-- Top-right quadrant: vertical gradient with bullet points -->
+        <div class="quadrant top-right">
+          <ul class="custom-bullets">
+            <li>“Light” at Moma</li>
+            <li>“Homage” at Lacma</li>
+            <li>Considered a pioneer of net art.</li>
+          </ul>
+        </div>
+
+        <!-- Bottom-right quadrant: image -->
+        <div class="quadrant bottom-right">
+          <img src="https://www.newrafael.com/wp-content/uploads/2025/03/2025-lacma-homage-04.jpg" alt="Bottom Right" />
+        </div>
+
+    </div>
+
+  </div>
+</body>
+</html>

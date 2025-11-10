@@ -1,0 +1,117 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  background-color: black;
+  font-size: 30px;
+}
+
+.split-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* Left and right halves */
+.half {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Left half iframe */
+.left {
+  position: relative; /* needed for overlay */
+}
+
+.left iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Overlay to make iframe clickable */
+.iframe-overlay {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.half {
+  position: relative; /* required for overlay positioning */
+}
+
+/* Right half: stacked top-right and bottom-right */
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right quadrants: 50% height each */
+.right .quadrant {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+/* Vertical gradient for top-right */
+.top-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, hsl(200, 100%, 50%), hsl(100, 100%, 50%), hsl(0, 100%, 50%));
+  filter: hue-rotate(0deg);
+  animation: hueShift 10s linear infinite;
+  z-index: 0;
+}
+
+/* Bullets above gradient */
+.top-right > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Bullets styling */
+ul.custom-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.custom-bullets li::before {
+  content: "🌹";
+  margin-right: 10px;
+}
+
+ul.custom-bullets li {
+  margin: 8px 0;
+}
+
+/* Bottom-right image */
+.bottom-right img {
+  width: 120%;
+  height: auto;
+  z-index: 1;
+  object-fit: contain;
+  padding-bottom: 200px;
+  padding-right: 100px;
+}
+
+/* Gradient animation */
+@keyframes hueShift {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(360deg); }
+}
